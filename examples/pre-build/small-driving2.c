@@ -31,16 +31,11 @@ offdelay timer<0.01, 2000, 2000> Timer;
 
 func main() {
 	// we can have functions which will be implemented on subroutines
-	if((StartButton || MyBit) && !StopButton)
-		MyBit = high;
-	// ^ However, if condition is false, MyBit will be set to low, without "else" statement.
+	MyBit = ((StartButton || MyBit) && !StopButton);
 	
 	if(MyBit)
 		Timer.enable;
 
-	if(MyBit)
-		Motor = high;
-
-	if(Timer.done)
-		CoolingFans = high;
+	Motor = MyBit;
+	CoolingFans = Timer.done;
 }
