@@ -26,7 +26,7 @@ offdelay timer<0.01, 2000, 2000> Timer;
  * .value - Timer current value (%TMi.V)
  * .max - Timer task value (%TMi.P)
  *
- * .enable - Call timer to start counting
+ * .enable() - Call timer to start counting
  */
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 	MyBit = ((StartButton || MyBit) && !StopButton);
 	
 	if(MyBit)
-		Timer.enable;
+		Timer.enable();
 
 	Motor = MyBit;
 	CoolingFans = Timer.done;
