@@ -14,6 +14,12 @@ struct bitVariable {
 // FIX ME
 //struct bitVariable* bitVariables[20]; // array of bit variables, 20 max for the moment. index says which pin is it
 
+void mapBitVariable(char* VarName, int type, int local){
+	// here we have to check available addresses of bit variable
+	printf("Mapping %s to %%%c%d\n", VarName, 0, 0);
+	// here we should map it to some global map, so later it will be written to ladder code, and map list
+}
+
 void finish(int i){
 	printf("Stop! Operation took: %d seconds\n", (int)time(NULL)-timeStart);
 	exit(i);
